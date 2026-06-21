@@ -1,0 +1,17 @@
+global:
+  domain: argocd.home.arpa
+
+server:
+  service:
+    type: ClusterIP
+
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    hostname: argocd.home.arpa
+    path: /
+    pathType: Prefix
+
+configs:
+  params:
+    server.insecure: true
